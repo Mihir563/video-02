@@ -1,0 +1,454 @@
+@import "tailwindcss";
+
+:root {
+  /* Default theme (dark) */
+  --primary: 130, 100%, 50%;
+  --primary-foreground: 0, 0%, 100%;  
+  --background: 246, 65%, 10%;
+  --foreground: 0, 0%, 100%;
+  --accent: 270, 100%, 65%;
+  --accent-foreground: 0, 0%, 100%;
+  --muted: 246, 30%, 20%;
+  --card: 246, 60%, 15%;
+  --card-foreground: 0, 0%, 100%;
+  --popover: 246, 60%, 15%;
+  --popover-foreground: 0, 0%, 100%;
+  --secondary: 246, 40%, 40%;
+  --secondary-foreground: 0, 0%, 100%;
+  --destructive: 0, 100%, 50%;
+  --destructive-foreground: 0, 0%, 100%;
+  --border: 246, 30%, 20%;
+  --input: 246, 30%, 20%;
+  --ring: 130, 100%, 50%;
+}
+
+/* Dark theme - keep same as root for consistency */
+.dark {
+  --primary: 130, 100%, 50%;
+  --primary-foreground: 0, 0%, 100%;
+  --background: 246, 65%, 10%;
+  --foreground: 0, 0%, 100%;
+  --accent: 270, 100%, 65%;
+  --accent-foreground: 0, 0%, 100%;
+  --muted: 246, 30%, 20%;
+  --card: 246, 60%, 15%;
+  --card-foreground: 0, 0%, 100%;
+  --popover: 246, 60%, 15%;
+  --popover-foreground: 0, 0%, 100%;
+  --secondary: 246, 40%, 40%;
+  --secondary-foreground: 0, 0%, 100%;
+  --destructive: 0, 100%, 50%;
+  --destructive-foreground: 0, 0%, 100%;
+  --border: 246, 30%, 20%;
+  --input: 246, 30%, 20%;
+  --ring: 130, 100%, 50%;
+  --muted-foreground: 220, 10%, 70%;
+--radius: 0.5rem;
+}
+
+/* Light theme - proper light colors */
+.light {
+  --primary: 130, 80%, 40%;
+  --primary-foreground: 0, 0%, 100%;
+  --background: 230, 20%, 95%;
+  --foreground: 240, 10%, 20%;
+  --accent: 270, 70%, 60%;
+  --accent-foreground: 0, 0%, 100%;
+  --muted: 230, 15%, 80%;
+  --card: 230, 15%, 90%;
+  --card-foreground: 240, 10%, 20%;
+  --popover: 230, 15%, 90%;
+  --popover-foreground: 240, 10%, 20%;
+  --secondary: 246, 40%, 60%;
+  --secondary-foreground: 0, 0%, 100%;
+  --destructive: 0, 90%, 60%;
+  --destructive-foreground: 0, 0%, 100%;
+  --border: 230, 15%, 70%;
+  --input: 230, 15%, 70%;
+  --ring: 130, 100%, 50%;
+  --muted-foreground: 240, 10%, 45%;
+--radius: 0.5rem;
+}
+
+body {
+  background: linear-gradient(to bottom right, hsl(246, 70%, 15%), hsl(246, 80%, 5%));
+  color: hsl(var(--foreground));
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.dark body {
+  background: linear-gradient(to bottom right, hsl(246, 70%, 15%), hsl(0, 0%, 0%));
+}
+
+.light body {
+  background: linear-gradient(to bottom right, hsl(0, 0%, 100%), hsl(230, 15%, 98%));
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 0 rgba(130, 255, 130, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 30px 8px rgba(130, 255, 130, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 5px 0 rgba(130, 255, 130, 0.3);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+.grid-item {
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Light mode modifications for grid items */
+.light .grid-item {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.grid-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.grid-item:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.grid-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.grid-item:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.grid-item:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.grid-item:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+.grid-item:nth-child(7) {
+  animation-delay: 0.4s;
+}
+
+.grid-item:nth-child(8) {
+  animation-delay: 0.45s;
+}
+
+.grid-item:nth-child(9) {
+  animation-delay: 0.5s;
+}
+
+.grid-item:nth-child(10) {
+  animation-delay: 0.55s;
+}
+
+.grid-item:nth-child(11) {
+  animation-delay: 0.6s;
+}
+
+.grid-item:nth-child(12) {
+  animation-delay: 0.65s;
+}
+
+.modal-overlay {
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Light mode overlay */
+.light .modal-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+}
+
+.modal-content {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(135deg, rgba(41, 31, 92, 0.8), rgba(10, 10, 30, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode modal */
+.light .modal-content {
+  background: linear-gradient(135deg, rgba(230, 230, 250, 0.9), rgba(255, 255, 255, 0.95));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-content.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.futuristic-border {
+  position: relative;
+  border: 1px solid rgba(130, 255, 130, 0.15);
+  background: linear-gradient(135deg, rgba(41, 31, 92, 0.2), rgba(10, 10, 30, 0.2));
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Light mode futuristic border */
+.light .futuristic-border {
+  border: 1px solid rgba(0, 100, 0, 0.2);
+  background: linear-gradient(135deg, rgba(230, 230, 250, 0.4), rgba(255, 255, 255, 0.7));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.futuristic-border:hover {
+  border: 1px solid rgba(130, 255, 130, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 10px rgba(130, 255, 130, 0.2);
+}
+
+/* Light mode futuristic border hover */
+.light .futuristic-border:hover {
+  border: 1px solid rgba(0, 100, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 10px rgba(0, 150, 0, 0.15);
+}
+
+.futuristic-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+  animation: borderFlow 3s linear infinite;
+}
+
+@keyframes borderFlow {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.button-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(50%);
+}
+
+.checkbox-container {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(0, 255, 100, 0.8);
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 255, 100, 0.3);
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+/* Light mode checkbox */
+.light .checkbox-custom {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(0, 100, 0, 0.6);
+}
+
+.checkbox-input:checked+.checkbox-custom {
+  background-color: rgba(130, 255, 130, 0.2);
+  border-color: rgba(130, 255, 130, 1);
+  box-shadow: 0 0 10px rgba(130, 255, 130, 0.8);
+}
+
+/* Light mode checked checkbox */
+.light .checkbox-input:checked+.checkbox-custom {
+  background-color: rgba(0, 150, 0, 0.8);
+  border-color: rgba(0, 100, 0, 1);
+  box-shadow: 0 0 10px rgba(0, 100, 0, 0.4);
+}
+
+.checkbox-custom::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 8px;
+  top: 4px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(90deg);
+}
+
+.checkbox-input:checked+.checkbox-custom::after {
+  display: block;
+  animation: scaleIn 0.2s ease forwards;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6366f1, #3730a3);
+  border-radius: 4px;
+}
+
+/* Light mode scrollbar */
+.light ::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #4f46e5, #818cf8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #818cf8, #4f46e5);
+}
+
+/* Light mode scrollbar hover */
+.light ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #6366f1, #3730a3);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 30, 0.3);
+  border-radius: 4px;
+}
+
+/* Light mode scrollbar track */
+.light ::-webkit-scrollbar-track {
+  background: rgba(230, 230, 250, 0.5);
+}
+
+/* Additional modern elements */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Light mode glass card */
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(130, 255, 130, 0.2);
+}
+
+/* Light mode glass card hover */
+.light .glass-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 150, 0, 0.1);
+}
+
+.neon-text {
+  color: white;
+  text-shadow: 0 0 5px rgba(130, 255, 130, 0.5), 0 0 10px rgba(130, 255, 130, 0.3);
+}
+
+/* Light mode neon text */
+.light .neon-text {
+  color: #005000;
+  text-shadow: 0 0 5px rgba(0, 100, 0, 0.3), 0 0 10px rgba(0, 100, 0, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #818cf8, #4ade80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Light mode gradient text - slightly different gradient */
+.light .gradient-text {
+  background: linear-gradient(to right, #4f46e5, #16a34a);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Light mode hover lift */
+.light .hover-lift:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-track:hover {
+  background: rgba(130, 255, 130, 0.1);
+}
