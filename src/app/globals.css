@@ -2,72 +2,74 @@
 
 :root {
   /* Default theme (dark) */
-  --primary: 130, 100%, 50%;
+  --primary: 160, 84%, 39%;  /* More teal-like professional green */
   --primary-foreground: 0, 0%, 100%;  
-  --background: 246, 65%, 10%;
+  --background: 222, 47%, 11%;  /* Deeper, less saturated blue-gray */
   --foreground: 0, 0%, 100%;
-  --accent: 270, 100%, 65%;
+  --accent: 250, 70%, 60%;  /* More professional purple */
   --accent-foreground: 0, 0%, 100%;
-  --muted: 246, 30%, 20%;
-  --card: 246, 60%, 15%;
+  --muted: 223, 20%, 25%;  /* Less saturated muted color */
+  --card: 224, 40%, 15%;  /* Less saturated card background */
   --card-foreground: 0, 0%, 100%;
-  --popover: 246, 60%, 15%;
+  --popover: 224, 40%, 15%;
   --popover-foreground: 0, 0%, 100%;
-  --secondary: 246, 40%, 40%;
+  --secondary: 215, 25%, 40%;  /* More subtle secondary */
   --secondary-foreground: 0, 0%, 100%;
-  --destructive: 0, 100%, 50%;
+  --destructive: 0, 84%, 50%;  /* Slightly desaturated red */
   --destructive-foreground: 0, 0%, 100%;
-  --border: 246, 30%, 20%;
-  --input: 246, 30%, 20%;
-  --ring: 130, 100%, 50%;
+  --border: 220, 20%, 25%;
+  --input: 220, 20%, 25%;
+  --ring: 160, 84%, 39%;  /* Match primary */
+  --muted-foreground: 220, 10%, 70%;
+  --radius: 0.5rem;
 }
 
 /* Dark theme - keep same as root for consistency */
 .dark {
-  --primary: 130, 100%, 50%;
+  --primary: 160, 84%, 39%;
   --primary-foreground: 0, 0%, 100%;
-  --background: 246, 65%, 10%;
+  --background: 222, 47%, 11%;
   --foreground: 0, 0%, 100%;
-  --accent: 270, 100%, 65%;
+  --accent: 250, 70%, 60%;
   --accent-foreground: 0, 0%, 100%;
-  --muted: 246, 30%, 20%;
-  --card: 246, 60%, 15%;
+  --muted: 223, 20%, 25%;
+  --card: 224, 40%, 15%;
   --card-foreground: 0, 0%, 100%;
-  --popover: 246, 60%, 15%;
+  --popover: 224, 40%, 15%;
   --popover-foreground: 0, 0%, 100%;
-  --secondary: 246, 40%, 40%;
+  --secondary: 215, 25%, 40%;
   --secondary-foreground: 0, 0%, 100%;
-  --destructive: 0, 100%, 50%;
+  --destructive: 0, 84%, 50%;
   --destructive-foreground: 0, 0%, 100%;
-  --border: 246, 30%, 20%;
-  --input: 246, 30%, 20%;
-  --ring: 130, 100%, 50%;
+  --border: 220, 20%, 25%;
+  --input: 220, 20%, 25%;
+  --ring: 160, 84%, 39%;
   --muted-foreground: 220, 10%, 70%;
---radius: 0.5rem;
+  --radius: 0.5rem;
 }
 
 /* Light theme - proper light colors */
 .light {
-  --primary: 130, 80%, 40%;
+  --primary: 160, 65%, 35%;  /* Darker green for better contrast on light */
   --primary-foreground: 0, 0%, 100%;
-  --background: 230, 20%, 95%;
-  --foreground: 240, 10%, 20%;
-  --accent: 270, 70%, 60%;
+  --background: 210, 20%, 98%;  /* Subtle blue-tinted white */
+  --foreground: 222, 20%, 15%;  /* Dark blue-gray text */
+  --accent: 250, 60%, 55%;  /* Slightly muted purple */
   --accent-foreground: 0, 0%, 100%;
-  --muted: 230, 15%, 80%;
-  --card: 230, 15%, 90%;
-  --card-foreground: 240, 10%, 20%;
-  --popover: 230, 15%, 90%;
-  --popover-foreground: 240, 10%, 20%;
-  --secondary: 246, 40%, 60%;
+  --muted: 210, 15%, 90%;  /* Subtle blue-gray */
+  --card: 210, 15%, 97%;  /* Slightly blue-tinted card */
+  --card-foreground: 222, 20%, 15%;
+  --popover: 210, 15%, 97%;
+  --popover-foreground: 222, 20%, 15%;
+  --secondary: 215, 25%, 50%;  /* Blue-tinted secondary */
   --secondary-foreground: 0, 0%, 100%;
-  --destructive: 0, 90%, 60%;
+  --destructive: 0, 75%, 50%;  /* Slightly muted red */
   --destructive-foreground: 0, 0%, 100%;
-  --border: 230, 15%, 70%;
-  --input: 230, 15%, 70%;
-  --ring: 130, 100%, 50%;
-  --muted-foreground: 240, 10%, 45%;
---radius: 0.5rem;
+  --border: 215, 15%, 85%;  /* Subtle border */
+  --input: 215, 15%, 85%;
+  --ring: 160, 65%, 35%;  /* Match primary */
+  --muted-foreground: 220, 15%, 40%;  /* Better contrast */
+  --radius: 0.5rem;
 }
 
 body {

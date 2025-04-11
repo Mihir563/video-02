@@ -174,7 +174,7 @@ export default function ContactFormModal({
 
   return (
     <Dialog open={isOpen} >
-      <DialogContent className="sm:max-w-[500px] rounded-2xl border border-white/10 bg-white/80 dark:bg-zinc-900/70 backdrop-blur-md shadow-2xl transition-all duration-300 animate-in slide-in-from-bottom-6">
+      <DialogContent className="sm:max-w-[500px] rounded-2xl border border-white/10 dark:bg-zinc-900/70 backdrop-blur-md shadow-2xl transition-all duration-300 animate-in slide-in-from-bottom-6">
         {!isSubmitted ? (
           <div className="p-8">
             <DialogClose asChild>

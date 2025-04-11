@@ -3,7 +3,6 @@
 import Image from "next/image"
 import type { UserImage } from "@/types"
 import { Checkbox } from "../ui/checkbox"
-import SelectedImagesCarousel from "./ImageCarousel/SelectedImagesCarousel"
 
 interface ImageGridProps {
   images: UserImage[]
@@ -69,8 +68,6 @@ export default function ImageGrid({ images, loading, selectedImages, onSelectIma
                   />
                 </label>
               </div>
-
-              
             </div>
           </div>
         </div>
